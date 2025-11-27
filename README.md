@@ -36,6 +36,7 @@ It allows users to search for a location, get current weather data, view local t
 
 ```
 ├── index.html               # Main application interface
+├── LICENSE                  # License file
 ├── README.md                # (This file)
 │
 ├── css/
