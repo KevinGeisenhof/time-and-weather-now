@@ -1,0 +1,20 @@
+/* Modified Bootstrap classes */
+
+.list-group-item-action {
+    cursor: pointer !important;
+}
+
+
+/* Original classes */
+.search-input-width {
+    width: clamp(220px, 50vw, 500px);
+}
+
+.weather-icon-size {
+    font-size: clamp(1rem, 10vw, 4rem);
+    line-height: 1;
+}
+
+.weather-type-size {
+    font-size: clamp(1rem, 1vw, 2rem);
+}

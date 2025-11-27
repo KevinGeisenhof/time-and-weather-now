@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Time & Weather Now - Kevin Geisenhof</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+    </head>
+
+    <body class="p-4 d-flex justify-content-center">
+        <div id="content" class="w-100 d-flex flex-column align-items-center text-center" style="max-width: 800px;">
+            <!-- Header -->
+            <header class="py-4">
+                <div class="d-flex flex-column justify-content-start align-items-center py-2">
+                    <h1 id="appName">Time & Weather Now</h1>
+                    <span id="appAuthor">Made by Kevin Geisenhof</span>
+                    <span id="dataSource">Data provided by Open-Meteo API</span>
+                </div>
+                <div class="d-flex flex-row justify-content-center align-items-start py-2">
+                    <button type="button" id="themeBtn" class="btn btn-outline-secondary text-nowrap">🌙</button>
+                    <button type="button" id="weatherTemperatureUnitBtn" class="btn btn-outline-secondary text-nowrap ms-2">🌡️ °F</button>
+                    <button type="button" id="hourFormatBtn" class="btn btn-outline-secondary text-nowrap ms-2">⏲️ 12h</button>
+                    <button type="button" id="weatherWindUnitBtn" class="btn btn-outline-secondary text-nowrap ms-2">🍃 mph</button>
+                </div>
+            </header>
+
+            <!-- Main -->
+            <main class="py-4">
+                <div class="d-flex flex-column justify-content-start align-items-center">
+                    <!-- Search engine -->
+                    <div id="searchEngineContainer" class="py-2">
+                        <div class="py-2">
+                            <input id="searchInput" class="search-input-width form-control" type="search" placeholder="Search city..." aria-label="Search">
+                        </div>
+                        <div class="d-flex flex-row justify-content-center align-items-start py-2">
+                            <button id="searchBtn" class="btn btn-primary">Search</button>
+                            <button id="locationBtn" class="btn btn-secondary ms-2 text-nowrap">Use my location</button>
+                        </div>
+                    </div>
+
+                    <!-- Loading indicator -->
+                    <div id="loadingContainer" class="py-2 d-none">
+                        <div id="loadingAlert" class="alert alert-info">
+                            <div class="spinner-border text-primary" role="status"></div>
+                        </div>
+                    </div>
+
+                    <!-- Failed search -->
+                    <div id="failedSearchContainer" class="py-2 d-none">
+                        <div id="failedSearchAlert" class="alert alert-danger">
+                            Failed search text
+                        </div>
+                    </div>
+
+                    <!-- Search results (appears only if a city is present in more than one country) -->
+                    <div id="searchResultsContainer" class="py-2 d-none">
+                        <span>More than one city exists with that name - select the correct one:</span>
+                        <ul id="searchResults" class="list-group py-2">
+                            <!-- <li class="list-group-item list-group-item-action">Search result</li> -->
+                        </ul>
+                    </div>
+
+                    <!-- Result data -->
+                    <div id="resultDataContainer" class="py-2 d-none">
+                        <div id="resultData" class="card p-4">
+                            <div id="cityContainer" class="py-3">
+                                <h3 id="cityCountryAdminName">City, country and admin name</h3>
+                                <h4 id="timezoneTime">Timezone time</h4>
+                                <div class="d-flex flex-column justify-content-start align-items-center">
+                                    <span id="timezoneDate">Timezone date</span>
+                                    <span id="timezoneValueName">Timezone value and name</span>
+                                </div>
+                            </div>
+                            <div id="weatherContainer" class="d-flex flex-row justify-content-center align-items-start py-3">
+                                <div id="weatherIcon" class="weather-icon-size">Weather icon</div>
+                                <div id="weatherDescription" class="d-flex flex-column justify-content-start align-items-start ps-2">
+                                    <span id="weatherType" class="weather-type-size fw-bold">Weather type</span>
+                                    <div class="d-flex flex-row justify-content-start align-items-start">
+                                        <h3 id="weatherTemperatureValue">Weather temperature value</h3>
+                                        <h3 id="weatherTemperatureUnit" class="ms-2">°C</h3>
+                                    </div>
+                                    <span>
+                                        🍃 Wind: <span id="weatherWindValue">Weather wind value</span> <span id="weatherWindUnit">km/h</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="py-4">
+                <span id="copyright">This app uses the MIT License: <a href="https://mit-license.org/" target="_blank">https://mit-license.org/</a></span>
+            </footer>
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Custom JS -->
+        <script src="js/custom.js"></script>
+    </body>
+</html>
